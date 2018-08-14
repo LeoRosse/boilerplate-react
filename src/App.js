@@ -1,18 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Alert from 'react-s-alert';
+
+import 'react-s-alert/dist/s-alert-default.css';
+import 'react-s-alert/dist/s-alert-css-effects/stackslide.css'
+
 import './App.css';
+import AppRouter from './routers/AppRouter';
 
 class App extends Component {
   render() {
+
+    if (this.props.error) {
+      Alert.error(`<h4>Qui va il messaggio di errore</h4>`, {
+        position: 'top',
+        html: true,
+        effect: 'stackslide',
+        beep: false,
+        timeout: 4000,
+        offset: 50
+      });
+    }
+
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <AppRouter />
+        <Alert stack={{ limit: 3 }} />
       </div>
     );
   }

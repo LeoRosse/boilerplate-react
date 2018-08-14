@@ -16,3 +16,5 @@ Come pacchetti base sono stati previsti:
 - react-table come tabella
 - react-s-alert per gli alert
 - react-datepicker per il datepicker
+
+Ricordarsi di inserire l'url relativo al progetto nei file .env e .env.staging per le eventuali build.
