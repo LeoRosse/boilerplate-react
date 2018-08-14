@@ -1,0 +1,37 @@
+body{
+    font-family: "Ropa Sans", sans-serif;
+    font-weight: 400;
+    /* font-size:16px; */
+    line-height: 1.7;
+    color: $color-grey-dark;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+color:#777;
+}
+
+h1{
+    font-size:2.3rem;
+    letter-spacing: 1px
+}
+
+h2{
+    font-size:1.8rem;
+    letter-spacing: 1px
+}
+
+h3{
+    font-size:1.5rem;
+    letter-spacing: 1px
+}
+h4 {
+    font-size: 1.3rem;
+}
+p{
+    font-size:1.2rem;
+}

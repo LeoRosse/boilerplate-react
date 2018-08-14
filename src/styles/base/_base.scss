@@ -1,0 +1,46 @@
+*,
+*::after,
+*::before {
+    margin:0;
+    padding:0;
+    box-sizing: inherit;
+}
+
+html{
+    /* font-size: 10px; invece di scrivere 10px facciamo 10/16 che il font default del browser e troviamo la percentuale per calcolare tutti i rem dopo*/
+    font-size: 62.5%; //1 rem =10px 10px/16px = 62.5%;
+
+/*     @include respond-phone {
+        font-size: 50%; //content che passo dentro il mixin chiamato respond-phone
+    } */
+
+
+    @include respond(tab-land){ // width <1200?
+        font-size: 56.25%; //1 rem = 9px, 9/16 = 56.25%;
+    }
+    @include respond(tab-port){ // width <900?
+        font-size: 50%; //1 rem = 8px, 8/16 = 50%;
+    }
+    //questo è l'ordine giusto, perché la precedenza l'ha l'ultima dichiarazione fatta.. supponiamo di avere un screen da 700px, allora entrambe sarebbero applicate perché minore di entramba ma 
+    //se dichiaravo dopo tab-land me la ingrandiva invece che rimpicciolire
+/*     @include respond(phone){
+        font-size: 30%; // 1 rem = 4.8px
+    } */
+    @include respond(big-desktop){
+        font-size: 75%; // 1 rem= 12, 12/16
+    }
+}
+
+
+body {
+    box-sizing: border-box;
+    // padding:1rem;
+    background-color: $color-white;
+
+    @include respond(tab-port){
+        padding: 0;
+    }}
+
+    p {
+        margin-bottom: 1.4rem;
+    }
